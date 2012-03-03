@@ -20,22 +20,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Visual settings
 
-; Note: It's important to set the default font _before_ invoking color-theme.
-; Otherwise Emacs seems to get confused about window dimensions.
+(condition-case nil
+  (progn
+    (relative-load "lib/color-theme-solarized.el")
 
-(defun my-set-font (font-spec)
-  (setq default-frame-alist
-	(cons
-	 (cons 'font font-spec)
-	 default-frame-alist)))
-
-(my-set-font "Inconsolata 12")
-
-(relative-load "lib/color-theme-solarized.el")
-
-(if window-system
-    (color-theme-solarized-dark)
-  (color-theme-hober))
+    (if window-system
+      (color-theme-solarized-dark)
+      (color-theme-hober)))
+  (error nil))
 
 (relative-load "settings.el")
 (relative-load "util.el")
