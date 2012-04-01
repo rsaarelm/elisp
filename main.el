@@ -38,8 +38,10 @@
 (condition-case nil
     (progn
       (require 'yasnippet)
-      (yas/load-directory "~/.elisp/snippets")
-      (yas/initialize))
+      (yas/initialize)
+      (yas/load-directory "~/elisp/snippets")
+      (require 'dropdown-list) ; Need this to have keyboard completion for dropdowns
+      (setq yas/prompt-functions '(yas/dropdown-prompt)))
   (error (message "Yasnippet not found.")))
 
 (load-elisp-directory "local")

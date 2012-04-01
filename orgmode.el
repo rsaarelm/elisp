@@ -14,12 +14,13 @@
 (add-hook 'org-mode-hook
           (lambda ()
             ; yasnippet
-            (make-variable-buffer-local 'yas/trigger-key)
-            (setq yas/trigger-key [tab])
-            (define-key yas/keymap [tab] 'yas/next-field-group)
+;            (condition-case nil (progn
+;                                  (make-variable-buffer-local 'yas/trigger-key)
+;                                  (setq yas/trigger-key [tab])
+;                                  (define-key yas/keymap [tab] 'yas/next-field-group))
+;              (error (message "Yasnippet not found.")))
             ; flyspell for automatic spell checking
-            (flyspell-mode 1)
-            ))
+            (flyspell-mode 1)))
 
 ; Remember old clocks
 (setq org-clock-history-length 10)
