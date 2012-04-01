@@ -79,15 +79,15 @@
 ; SOMEDAY: Tasks you aren't actively committed to finish them. "I'll do it
 ; someday, maybe."
 ;
-; PROJECT: Tasks you are committed to doing, but are too big or vague to be
-; TODO items.
+; DISMISSED: Dropped out of the list due to lack of interest instead of being
+; cancelled for a particular good reason.
 ;
 ; CANCELED: Canceled tasks. Should explain why the task was canceled.
 ;
 ; DONE: Finished tasks.
 (setq org-todo-keywords
       '((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "|" "DONE(d)")
-        (sequence "WAITING(w@)" "SOMEDAY(S)" "PROJECT(P)" "FIXME(f)" "|" "CANCELED(C@)")))
+        (sequence "WAITING(w@)" "SOMEDAY(S)" "DISMISSED(x)" "FIXME(f)" "|" "CANCELED(C@)")))
 
 (setq org-todo-keyword-faces
       '(("TODO" :foreground "chartreuse" :weight bold)
@@ -97,7 +97,7 @@
         ("DONE" :foreground "slate gray" :weight bold)
         ("WAITING" :foreground "indian red" :weight bold)
         ("SOMEDAY" :foreground "medium orchid" :weight bold)
-        ("PROJECT" :foreground "turquoise" :weight bold)
+        ("DISMISSED" :foreground "dark slate blue" :weight bold)
         ("CANCELED" :foreground "steel blue" :weight bold)))
 
 ; State triggers
@@ -129,10 +129,10 @@
         ("w" "Tasks waiting on something" tags "WAITING"
          ((org-use-tag-inheritance nil)))
         ("t" "Actively developed tasks" tags
-        "WORKINGON/PROJECT|TODO|NEXT|STARTED|FIXME"
+        "/TODO|NEXT|STARTED|FIXME"
          ((org-use-tag-inheritance nil)))
         ("T" "Actively developed task subtrees" tags
-        "WORKINGON/PROJECT|TODO|NEXT|STARTED|FIXME"
+        "/TODO|NEXT|STARTED|FIXME"
          ())
         ("n" "Started and upcoming tasks" tags "/NEXT|STARTED"
          ((org-agenda-todo-ignore-with-date nil)))
