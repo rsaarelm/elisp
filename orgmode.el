@@ -85,9 +85,12 @@
 ; CANCELED: Canceled tasks. Should explain why the task was canceled.
 ;
 ; DONE: Finished tasks.
+;
+; NOTE: Non-task things that'll show up in the agenda
 (setq org-todo-keywords
       '((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "|" "DONE(d)")
-        (sequence "WAITING(w@)" "SOMEDAY(S)" "DISMISSED(x)" "FIXME(f)" "|" "CANCELED(C@)")))
+        (sequence "WAITING(w@)" "SOMEDAY(S)" "DISMISSED(x)" "FIXME(f)" "|" "CANCELED(C@)")
+        (sequence "NOTE")))
 
 (setq org-todo-keyword-faces
       '(("TODO" :foreground "chartreuse" :weight bold)
@@ -97,6 +100,7 @@
         ("DONE" :foreground "slate gray" :weight bold)
         ("WAITING" :foreground "indian red" :weight bold)
         ("SOMEDAY" :foreground "medium orchid" :weight bold)
+        ("NOTE" :foreground "dark cyan" :weight bold)
         ("DISMISSED" :foreground "dark slate blue" :weight bold)
         ("CANCELED" :foreground "steel blue" :weight bold)))
 
@@ -129,10 +133,10 @@
         ("w" "Tasks waiting on something" tags "WAITING"
          ((org-use-tag-inheritance nil)))
         ("t" "Actively developed tasks" tags
-        "/TODO|NEXT|STARTED|FIXME"
+        "/TODO|NEXT|STARTED|FIXME|NOTE"
          ((org-use-tag-inheritance nil)))
         ("T" "Actively developed task subtrees" tags
-        "/TODO|NEXT|STARTED|FIXME"
+        "/TODO|NEXT|STARTED|FIXME|NOTE"
          ())
         ("n" "Started and upcoming tasks" tags "/NEXT|STARTED"
          ((org-agenda-todo-ignore-with-date nil)))
