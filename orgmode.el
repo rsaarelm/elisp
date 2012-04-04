@@ -79,7 +79,7 @@
 ; SOMEDAY: Tasks you aren't actively committed to finish them. "I'll do it
 ; someday, maybe."
 ;
-; DISMISSED: Dropped out of the list due to lack of interest instead of being
+; DROPPED: Dropped out of the list due to lack of interest instead of being
 ; cancelled for a particular good reason.
 ;
 ; CANCELED: Canceled tasks. Should explain why the task was canceled.
@@ -89,7 +89,7 @@
 ; NOTE: Non-task things that'll show up in the agenda
 (setq org-todo-keywords
       '((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "|" "DONE(d)")
-        (sequence "WAITING(w@)" "SOMEDAY(S)" "DISMISSED(x)" "FIXME(f)" "|" "CANCELED(C@)")
+        (sequence "WAITING(w@)" "SOMEDAY(S)" "DROPPED(x)" "FIXME(f)" "|" "CANCELED(C@)")
         (sequence "NOTE")))
 
 (setq org-todo-keyword-faces
@@ -101,7 +101,7 @@
         ("WAITING" :foreground "indian red" :weight bold)
         ("SOMEDAY" :foreground "medium orchid" :weight bold)
         ("NOTE" :foreground "dark cyan" :weight bold)
-        ("DISMISSED" :foreground "dark slate blue" :weight bold)
+        ("DROPPED" :foreground "dark slate blue" :weight bold)
         ("CANCELED" :foreground "steel blue" :weight bold)))
 
 ; State triggers
