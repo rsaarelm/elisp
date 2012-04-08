@@ -89,7 +89,7 @@
 ; NOTE: Non-task things that'll show up in the agenda
 (setq org-todo-keywords
       '((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "|" "DONE(d)")
-        (sequence "WAITING(w@)" "SOMEDAY(S)" "DROPPED(x)" "FIXME(f)" "|" "CANCELED(C@)")
+        (sequence "WAITING(w@)" "SOMEDAY(S)" "FIXME(f)" "|" "CANCELED(C@)" "DROPPED(x)")
         (sequence "NOTE")))
 
 (setq org-todo-keyword-faces
@@ -133,10 +133,10 @@
         ("w" "Tasks waiting on something" tags "WAITING"
          ((org-use-tag-inheritance nil)))
         ("t" "Actively developed tasks" tags
-        "/TODO|NEXT|STARTED|FIXME|NOTE"
+        "/TODO|NEXT|STARTED|FIXME"
          ((org-use-tag-inheritance nil)))
         ("T" "Actively developed task subtrees" tags
-        "/TODO|NEXT|STARTED|FIXME|NOTE"
+        "/TODO|NEXT|STARTED|FIXME"
          ())
         ("n" "Started and upcoming tasks" tags "/NEXT|STARTED"
          ((org-agenda-todo-ignore-with-date nil)))
