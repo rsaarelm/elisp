@@ -89,7 +89,7 @@
 ; NOTE: Non-task things that'll show up in the agenda
 (setq org-todo-keywords
       '((sequence "TODO(t)" "NEXT(n)" "STARTED(s)" "|" "DONE(d)")
-        (sequence "WAITING(w@)" "SOMEDAY(S)" "FIXME(f)" "|" "CANCELED(C@)" "DROPPED(x)")
+        (sequence "WAITING(w)" "SOMEDAY(S)" "FIXME(f)" "|" "CANCELED(C)" "DROPPED(x)")
         (sequence "NOTE")))
 
 (setq org-todo-keyword-faces
