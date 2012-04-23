@@ -109,9 +109,7 @@
 ; We want CANCELED and WAITING states to show up in subtasks as well. Do this
 ; by assigning tags to the tasks on setting the state.
 (setq org-todo-state-tags-triggers
-      '(("CANCELED" ("CANCELED" . t))
-        ("WAITING" ("WAITING" . t) ("WORKINGON"))
-        ("SOMEDAY" ("WAITING" . t))
+      '(("WAITING" ("WORKINGON"))
         (done ("WORKINGON") ("WAITING"))
         ("TODO" ("WAITING") ("CANCELED"))
         ("FIXME" ("WAITING") ("CANCELED"))
