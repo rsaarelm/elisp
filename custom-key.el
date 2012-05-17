@@ -72,3 +72,6 @@
         ((looking-at "\\s\)") (forward-char 1) (backward-list 1))
         (t (self-insert-command (or arg 1)))))
 (global-set-key (kbd "C-%") 'goto-match-paren)
+
+; Home row backspace
+(global-set-key [(control h)] 'delete-backward-char)
